@@ -1,0 +1,36 @@
+<div class="jira-app">
+    <header>
+        <div>
+            <img src="assets/images/jira-logo.png">
+        </div>
+
+        <div>
+            <button mat-stroked-button
+                    color="primary">Create</button>
+        </div>
+    </header>
+
+    <main>
+        <h2>Scrum Board</h2>
+        <div class="titles">
+            <span>TO DO</span>
+            <span>IN PROGRESS</span>
+            <span>IN REVIEW</span>
+            <span>HOLD</span>
+            <span>Done</span>
+        </div>
+        <div class="board"
+             cdkDropListGroup>
+            <div *ngFor="let state of boardData | async">
+                <div cdkDropList
+                     [cdkDropListData]="state.data"
+                     (cdkDropListDropped)="dropTicket($event)"
+                     class="list">
+                    <div *ngFor="let item of state.data"
+                         class="box"
+                         cdkDrag>{{item.ticket}}</div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
