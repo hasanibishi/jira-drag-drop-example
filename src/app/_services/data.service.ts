@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, from, Observable, of } from 'rxjs';
-import { IBoard, IEmployee, State } from '../_models/board';
+import { BehaviorSubject } from 'rxjs';
+import { IBoard, ITicket, State } from '../_models/board';
 import { employees, toDo, inProgress, inReview, testing, hold, done } from '../_services/jsonData'
 
 @Injectable({
@@ -21,20 +21,25 @@ export class DataService {
   ticketsObs$ = this.tickets.asObservable();
 
   constructor() {
-    this.tickets.next(this.boardData)
+    const data = sessionStorage.getItem('data') ? JSON.parse(sessionStorage.getItem('data')) : this.boardData;
+    this.tickets.next(data)
   }
 
   getEmployees() {
     return employees;
   }
 
-  addTicket() {
+  addTicket(data: ITicket, callback) {
 
-    let data = [{ id: 1, ticket: 'MP-000', employeeId: 9, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, excepturi?' }]
+    this.boardData.forEach(board => {
+      if (board.state === State.ToDo) {
+        board.data.push(data);
+        callback(true);
+      }
+    })
 
-    let da: IBoard[] = [{ state: State.ToDo, data: data }]
+    sessionStorage.setItem('data', JSON.stringify(this.boardData));
 
-    // this.tickets.next([...this.tickets.value, da])
-
+    this.tickets.next(this.boardData);
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { State } from 'src/app/_models/board';
 import { DataService } from 'src/app/_services/data.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-create-ticket',
@@ -14,14 +15,15 @@ export class CreateTicketComponent implements OnInit {
   form: FormGroup;
 
   constructor(
-    private dataService: DataService
+    private dataService: DataService,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      id: new FormControl(null),
+      id: new FormControl(Math.floor(Math.random() * 10000)),
       state: new FormControl(State.ToDo),
-      name: new FormControl('', Validators.required),
+      ticket: new FormControl(`MP-${Math.floor(Math.random() * 1000)}`),
       summary: new FormControl('', Validators.required),
       employeeId: new FormControl(null, Validators.required),
       description: new FormControl('', Validators.required)
@@ -29,11 +31,15 @@ export class CreateTicketComponent implements OnInit {
   }
 
   addTicket() {
-    this.dataService.addTicket()
+    if (this.form.valid) {
+      this.dataService.addTicket(this.form.value, (resp: boolean) => {
+        if (resp)
+          this.snackBar.open('Successfully inserted!', '', { duration: 2000 });
+      });
+    }
   }
 
   clear() {
     this.form.reset();
   }
 }
-//Math.floor(Math.random() * 10000)

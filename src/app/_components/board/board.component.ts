@@ -4,7 +4,15 @@ import { DataService } from 'src/app/_services/data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateTicketComponent } from '../create-ticket/create-ticket.component';
-import { IBoard } from 'src/app/_models/board';
+import { IBoard, IEmployee, ITicket } from 'src/app/_models/board';
+
+interface ITicketData extends ITicket {
+  employee: IEmployee
+}
+
+interface IBoardData extends IBoard {
+  data: ITicketData[]
+}
 
 @Component({
   selector: 'board',
@@ -16,7 +24,7 @@ export class BoardComponent implements OnInit {
   boardData$ = this.dataService.ticketsObs$;
   employees = this.dataService.getEmployees();
 
-  ticketData: IBoard[] = [];
+  ticketData: IBoardData[] = [];
 
   constructor(
     private dataService: DataService,
