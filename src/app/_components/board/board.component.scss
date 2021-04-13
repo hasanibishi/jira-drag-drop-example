@@ -2,6 +2,7 @@ $first-color: #0051cd;
 $text-color: #5e6c84;
 
 .jira-app {
+    padding-bottom: 2rem;
     header {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -23,9 +24,15 @@ $text-color: #5e6c84;
     }
 
     main {
+        .scrum {
+            margin-left: 1.75rem;
+            font-size: 1.5rem;
+            color: $text-color;
+        }
+
         .titles {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(6, 1fr);
             text-align: center;
             gap: 20px;
             margin: 1.75rem;
@@ -38,7 +45,7 @@ $text-color: #5e6c84;
 
         .board {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(6, 1fr);
             text-align: center;
             gap: 20px;
             margin: 1.75rem;
@@ -56,20 +63,37 @@ $text-color: #5e6c84;
 }
 
 .box {
-    padding: 20px 10px;
+    padding: 10px;
     border-bottom: solid 1px #ccc;
     color: rgba(0, 0, 0, 0.87);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 30px;
     justify-content: space-between;
-    box-sizing: border-box;
     cursor: move;
     background: white;
-    font-size: 14px;
+    font-size: 0.75rem;
 
     &:last-child {
         border: none;
+    }
+
+    div:first-child {
+        display: grid;
+        text-align: left;
+
+        span:first-child {
+            font-weight: bold;
+        }
+
+        span:nth-child(2) {
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+    }
+
+    img {
+        width: 30px;
+        border-radius: 50%;
     }
 }
 

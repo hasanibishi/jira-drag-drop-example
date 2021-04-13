@@ -1,54 +1,40 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
-import { IBoard, ITicket, State } from '../_models/board';
+import { BehaviorSubject, from, Observable, of } from 'rxjs';
+import { IBoard, IEmployee, State } from '../_models/board';
+import { employees, toDo, inProgress, inReview, testing, hold, done } from '../_services/jsonData'
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  private toDo: ITicket[] = [{
-    id: 1, ticket: 'MP-123', summary: 'Bug fixes', description: 'xxxx'
-  }]
-
-  private inProgress: ITicket[] = [
-    { id: 1, ticket: 'MP-876', summary: 'Bug fixes', description: 'xxxx' },
-    { id: 3, ticket: 'MP-131', summary: 'Bug fixes', description: 'xxxx' },
-    { id: 4, ticket: 'MP-176', summary: 'Bug fixes', description: 'xxxx' },
-    { id: 5, ticket: 'MP-234', summary: 'Bug fixes', description: 'xxxx' },
-  ]
-
-  private inReview: ITicket[] = [
-    { id: 1, ticket: 'MP-876', summary: 'Bug fixes', description: 'xxxx' },
-    { id: 3, ticket: 'MP-131', summary: 'Bug fixes', description: 'xxxx' },
-    { id: 4, ticket: 'MP-176', summary: 'Bug fixes', description: 'xxxx' },
-    { id: 5, ticket: 'MP-234', summary: 'Bug fixes', description: 'xxxx' },
-  ]
-
-  private hold: ITicket[] = [
-    { id: 1, ticket: 'MP-876', summary: 'Bug fixes', description: 'xxxx' },
-    { id: 3, ticket: 'MP-131', summary: 'Bug fixes', description: 'xxxx' },
-    { id: 4, ticket: 'MP-176', summary: 'Bug fixes', description: 'xxxx' },
-    { id: 5, ticket: 'MP-234', summary: 'Bug fixes', description: 'xxxx' },
-  ]
-
-  private done: ITicket[] = [
-    { id: 1, ticket: 'MP-876', summary: 'Bug fixes', description: 'xxxx' },
-    { id: 3, ticket: 'MP-131', summary: 'Bug fixes', description: 'xxxx' },
-    { id: 4, ticket: 'MP-176', summary: 'Bug fixes', description: 'xxxx' },
-    { id: 5, ticket: 'MP-234', summary: 'Bug fixes', description: 'xxxx' },
-  ]
-
   private boardData: IBoard[] = [
-    { state: State.ToDo, data: this.toDo },
-    { state: State.InProgress, data: this.inProgress },
-    { state: State.InReview, data: this.inReview },
-    { state: State.Hold, data: this.hold },
-    { state: State.Done, data: this.done },
+    { state: State.ToDo, data: toDo },
+    { state: State.InProgress, data: inProgress },
+    { state: State.InReview, data: inReview },
+    { state: State.Testing, data: testing },
+    { state: State.Hold, data: hold },
+    { state: State.Done, data: done },
   ]
 
-  private tickets = new BehaviorSubject<IBoard[]>(this.boardData);
-  ticketsObs = this.tickets.asObservable();
+  private tickets = new BehaviorSubject<IBoard[]>([]);
+  ticketsObs$ = this.tickets.asObservable();
 
-  constructor() { }
+  constructor() {
+    this.tickets.next(this.boardData)
+  }
+
+  getEmployees() {
+    return employees;
+  }
+
+  addTicket() {
+
+    let data = [{ id: 1, ticket: 'MP-000', employeeId: 9, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, excepturi?' }]
+
+    let da: IBoard[] = [{ state: State.ToDo, data: data }]
+
+    // this.tickets.next([...this.tickets.value, da])
+
+  }
 }

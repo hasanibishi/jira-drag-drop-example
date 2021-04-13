@@ -1,0 +1,51 @@
+<div class="createForm">
+    <header>
+        Create new ticket
+    </header>
+    <hr>
+
+    <main>
+        <div>
+            <form [formGroup]="form">
+                <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <input matInput
+                           autocomplete="off"
+                           formControlName="name">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Summary</mat-label>
+                    <input matInput
+                           autocomplete="off"
+                           formControlName="summary">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Select employee</mat-label>
+                    <mat-select formControlName="employeeId">
+                        <mat-option *ngFor="let item of employees"
+                                    [value]="item.id">{{item.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Description</mat-label>
+                    <textarea matInput
+                              autocomplete="off"
+                              style="line-height: 20px !important"
+                              formControlName="description"></textarea>
+                </mat-form-field>
+            </form>
+        </div>
+    </main>
+
+    <hr>
+
+    <footer>
+        <button mat-button
+                mat-dialog-close
+                (click)="clear()">Cancel</button>
+        <button mat-button
+                [mat-dialog-close]="true"
+                cdkFocusInitial
+                (click)="addTicket()">Create</button>
+    </footer>
+</div>

@@ -6,29 +6,50 @@
 
         <div>
             <button mat-stroked-button
+                    (click)="createTicket()"
                     color="primary">Create</button>
         </div>
     </header>
 
     <main>
-        <h2>Scrum Board</h2>
+        <br>
+        <span class="scrum">Scrum Board</span>
         <div class="titles">
             <span>TO DO</span>
             <span>IN PROGRESS</span>
             <span>IN REVIEW</span>
+            <span>TESTING</span>
             <span>HOLD</span>
             <span>Done</span>
         </div>
+
         <div class="board"
              cdkDropListGroup>
-            <div *ngFor="let state of boardData | async">
+            <div *ngFor="let state of ticketData">
                 <div cdkDropList
-                     [cdkDropListData]="state.data"
+                     [cdkDropListData]="state?.data"
                      (cdkDropListDropped)="dropTicket($event)"
                      class="list">
-                    <div *ngFor="let item of state.data"
+                    <div *ngFor="let item of state?.data"
                          class="box"
-                         cdkDrag>{{item.ticket}}</div>
+                         cdkDrag>
+                        <div>
+                            <span>
+                                {{item?.ticket}}
+                            </span>
+                            <span>
+                                {{item?.summary}}
+                            </span>
+                            <br>
+                            <span>
+                                {{item?.description}}
+                            </span>
+                        </div>
+                        <div class="photo">
+                            <img [matTooltip]="item?.employee?.name + ' ' + item?.employee?.surname"
+                                 [src]="item?.employee?.photo" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,13 @@
+.createForm {
+    mat-form-field {
+        width: 100%;
+
+        textarea {
+            max-height: 70px !important;
+        }
+    }
+
+    footer {
+        text-align: right;
+    }
+}
