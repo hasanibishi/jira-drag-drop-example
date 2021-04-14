@@ -34,7 +34,11 @@ export class CreateTicketComponent implements OnInit {
     if (this.form.valid) {
       this.dataService.addTicket(this.form.value, (resp: boolean) => {
         if (resp)
-          this.snackBar.open('Successfully inserted!', '', { duration: 2000 });
+          this.snackBar.open('Successfully Inserted!', '', {
+            duration: 2000,
+            horizontalPosition: 'right',
+            verticalPosition: 'top',
+          });
       });
     }
   }

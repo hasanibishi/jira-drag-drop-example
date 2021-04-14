@@ -50,7 +50,7 @@ export class BoardComponent implements OnInit {
 
   createTicket() {
     this.dialog.open(CreateTicketComponent, {
-      width: '400px',
+      width: '500px',
       disableClose: true
     });
   }
@@ -65,6 +65,12 @@ export class BoardComponent implements OnInit {
         event.currentIndex);
     }
 
-    this.snackBar.open('Successfully changed!', '', { duration: 2000 });
+    sessionStorage.setItem('data', JSON.stringify(this.ticketData));
+
+    this.snackBar.open('Successfully Updated!', '', {
+      duration: 2000,
+      horizontalPosition: 'right',
+      verticalPosition: 'top',
+    });
   }
 }

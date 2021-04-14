@@ -1,4 +1,8 @@
 .createForm {
+    header {
+        font-size: 1.5rem;
+    }
+
     mat-form-field {
         width: 100%;
 
@@ -9,5 +13,9 @@
 
     footer {
         text-align: right;
+
+        button {
+            margin: 0 5px;
+        }
     }
 }

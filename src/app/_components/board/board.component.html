@@ -3,17 +3,26 @@
         <div>
             <img src="assets/images/jira-logo.png">
         </div>
-
         <div>
-            <button mat-stroked-button
-                    (click)="createTicket()"
-                    color="primary">Create</button>
+            <span>John Smith</span>
+            <mat-icon>account_circle</mat-icon>
         </div>
     </header>
 
     <main>
-        <br>
-        <span class="scrum">Scrum Board</span>
+        <div class="divider">
+            <div>
+                <span class="scrum">Scrum Board</span>
+            </div>
+            <div>
+                <button mat-raised-button
+                        color="primary"
+                        (click)="createTicket()">
+                    <mat-icon>add</mat-icon>
+                    Create new ticket
+                </button>
+            </div>
+        </div>
         <div class="titles">
             <span>TO DO</span>
             <span>IN PROGRESS</span>
@@ -40,7 +49,7 @@
                             <span>
                                 {{item?.summary}}
                             </span>
-                            <br>
+                            <hr>
                             <span>
                                 {{item?.description}}
                             </span>

@@ -13,43 +13,43 @@ export const employees: IEmployee[] = [
 ]
 
 export let toDo: ITicket[] = [
-    { id: 1, ticket: 'MP-123', employeeId: 9, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, excepturi?' },
-    { id: 2, ticket: 'MP-574', employeeId: 2, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, excepturi?' },
-    { id: 3, ticket: 'MP-144', employeeId: 5, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, excepturi?' },
-    { id: 4, ticket: 'MP-354', employeeId: 1, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, excepturi?' }
+    { id: 1, ticket: 'MP-123', employeeId: 9, summary: 'Bug fixing', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, excepturi?' },
+    { id: 2, ticket: 'MP-574', employeeId: 2, summary: 'New Form', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, excepturi?' },
+    { id: 3, ticket: 'MP-144', employeeId: 5, summary: 'Only numbers', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, excepturi?' },
+    { id: 4, ticket: 'MP-354', employeeId: 1, summary: 'Reports', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, excepturi?' }
 ]
 
 export const inProgress: ITicket[] = [
-    { id: 1, ticket: 'MP-876', employeeId: 1, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium dolore aperiam corporis, necessitatibus vero obcaecati enim provident eius cumque quisquam!' },
-    { id: 2, ticket: 'MP-131', employeeId: 2, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae!' },
-    { id: 3, ticket: 'MP-176', employeeId: 3, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dignissimos accusamus neque.' },
-    { id: 4, ticket: 'MP-234', employeeId: 4, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.' },
+    { id: 1, ticket: 'MP-876', employeeId: 1, summary: 'Dynamic values', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium dolore aperiam corporis, necessitatibus vero obcaecati enim provident eius cumque quisquam!' },
+    { id: 2, ticket: 'MP-131', employeeId: 2, summary: 'New release', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae!' },
+    { id: 3, ticket: 'MP-176', employeeId: 3, summary: 'Export to Excel', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dignissimos accusamus neque.' },
+    { id: 4, ticket: 'MP-234', employeeId: 4, summary: 'Testing', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.' },
 ]
 
 export const inReview: ITicket[] = [
-    { id: 1, ticket: 'MP-876', employeeId: 8, summary: 'Bug fixes', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex ut incidunt eos, consectetur in omnis.' },
-    { id: 2, ticket: 'MP-131', employeeId: 7, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing.' },
-    { id: 3, ticket: 'MP-176', employeeId: 6, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit magni temporibus at aliquid quas consequatur eligendi architecto.' },
-    { id: 4, ticket: 'MP-234', employeeId: 5, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae!' },
+    { id: 1, ticket: 'MP-876', employeeId: 8, summary: 'New case', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex ut incidunt eos, consectetur in omnis.' },
+    { id: 2, ticket: 'MP-131', employeeId: 7, summary: 'Remove checkbox', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing.' },
+    { id: 3, ticket: 'MP-176', employeeId: 6, summary: 'Static data', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit magni temporibus at aliquid quas consequatur eligendi architecto.' },
+    { id: 4, ticket: 'MP-234', employeeId: 5, summary: 'Readonly', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae!' },
 ]
 
 export const testing: ITicket[] = [
-    { id: 1, ticket: 'MP-667', employeeId: 4, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quasi officiis a magnam culpa et, sint dolore?' },
-    { id: 2, ticket: 'MP-333', employeeId: 3, summary: 'Bug fixes', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex ut incidunt eos, consectetur in omnis.' },
-    { id: 3, ticket: 'MP-551', employeeId: 2, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit magni temporibus at aliquid quas consequatur eligendi architecto.' },
-    { id: 4, ticket: 'MP-087', employeeId: 1, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing.' },
+    { id: 1, ticket: 'MP-667', employeeId: 4, summary: 'Export to PDF', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quasi officiis a magnam culpa et, sint dolore?' },
+    { id: 2, ticket: 'MP-333', employeeId: 3, summary: 'Only text', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex ut incidunt eos, consectetur in omnis.' },
+    { id: 3, ticket: 'MP-551', employeeId: 2, summary: 'Add new repo', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit magni temporibus at aliquid quas consequatur eligendi architecto.' },
+    { id: 4, ticket: 'MP-087', employeeId: 1, summary: 'Change data', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing.' },
 ]
 
 export const hold: ITicket[] = [
-    { id: 1, ticket: 'MP-876', employeeId: 9, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit magni temporibus at.' },
-    { id: 3, ticket: 'MP-131', employeeId: 2, summary: 'Bug fixes', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores, dolorem harum. Explicabo totam nostrum quae ad.' },
-    { id: 4, ticket: 'MP-176', employeeId: 5, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.' },
-    { id: 5, ticket: 'MP-234', employeeId: 1, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing.' },
+    { id: 1, ticket: 'MP-876', employeeId: 9, summary: 'Refactor', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit magni temporibus at.' },
+    { id: 3, ticket: 'MP-131', employeeId: 2, summary: 'New branch', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores, dolorem harum. Explicabo totam nostrum quae ad.' },
+    { id: 4, ticket: 'MP-176', employeeId: 5, summary: 'Radio-button', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.' },
+    { id: 5, ticket: 'MP-234', employeeId: 1, summary: 'Autocomplete', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing.' },
 ]
 
 export const done: ITicket[] = [
-    { id: 1, ticket: 'MP-876', employeeId: 5, summary: 'Bug fixes', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex ut incidunt eos, consectetur in omnis.' },
-    { id: 2, ticket: 'MP-131', employeeId: 7, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit magni temporibus at aliquid quas consequatur eligendi architecto.' },
-    { id: 3, ticket: 'MP-176', employeeId: 0, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.' },
-    { id: 4, ticket: 'MP-234', employeeId: 3, summary: 'Bug fixes', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur explicabo voluptate quo harum facere natus facilis ex rem.' },
+    { id: 1, ticket: 'MP-876', employeeId: 5, summary: 'Refinement', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex ut incidunt eos, consectetur in omnis.' },
+    { id: 2, ticket: 'MP-131', employeeId: 7, summary: 'Datetime', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit magni temporibus at aliquid quas consequatur eligendi architecto.' },
+    { id: 3, ticket: 'MP-176', employeeId: 0, summary: 'Input disabled', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.' },
+    { id: 4, ticket: 'MP-234', employeeId: 3, summary: 'Styling', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur explicabo voluptate quo harum facere natus facilis ex rem.' },
 ]

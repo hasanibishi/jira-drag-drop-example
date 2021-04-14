@@ -7,27 +7,37 @@ $text-color: #5e6c84;
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
-        padding: 0 1.75rem;
         background: $first-color;
+        padding: 0.5rem 1.75rem;
 
         img {
             width: 250px;
         }
 
-        div:last-child {
-            text-align: right;
-
-            button {
-                background: #fff;
-            }
+        > div:last-child {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            justify-content: flex-end;
+            color: #fff;
         }
     }
 
     main {
-        .scrum {
-            margin-left: 1.75rem;
-            font-size: 1.5rem;
-            color: $text-color;
+        .divider {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            margin: 1.75rem;
+
+            .scrum {
+                font-size: 1.5rem;
+                color: $text-color;
+            }
+
+            div:last-child {
+                text-align: right;
+            }
         }
 
         .titles {
@@ -81,12 +91,17 @@ $text-color: #5e6c84;
         display: grid;
         text-align: left;
 
+        hr {
+            width: 100%;
+        }
+
         span:first-child {
             font-weight: bold;
         }
 
         span:nth-child(2) {
             font-size: 0.85rem;
+            font-weight: 500;
             margin-top: 0.5rem;
         }
     }
